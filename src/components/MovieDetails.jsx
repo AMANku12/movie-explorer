@@ -62,7 +62,7 @@ const MovieDetails = () => {
             return;
         }
         try {
-            const response = await axios.post("http://localhost:3000/api/watchlist/addtowatchlist", { moviedetails }, {
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/watchlist/addtowatchlist`, { moviedetails }, {
                 headers: {
                     Authorization: `Bearer ${token}`,
                 }
@@ -85,7 +85,7 @@ const MovieDetails = () => {
             return
         }
         try {
-            const response = await axios.post("http://localhost:3000/api/watchlist/removefromwatchlist",{movieId},{ headers:{
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/watchlist/removefromwatchlist`,{movieId},{ headers:{
                 Authorization: `Bearer ${token}`
             }});
             

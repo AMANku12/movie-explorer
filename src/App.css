@@ -1,0 +1,35 @@
+.appcontainer {
+    display: flex;
+    flex-direction: column;
+    height: 100vh; /* Full viewport height */
+    overflow: hidden; /* Prevent scrolling on the main container */
+  }
+  
+  .header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+  }
+  
+  .searchbar {
+    position: sticky;
+    top: 0;
+    z-index: 5;
+  }
+  
+  .belowcontent {
+    display: flex;
+    flex: 1; /* Take remaining space */
+    overflow: hidden; /* Prevent scrolling here */
+  }
+  
+  .centercontent {
+    width: 80%;
+    overflow-y: auto; /* Only this div will scroll */
+    padding-right: 10px; /* Add some padding for the scrollbar */
+  }
+  
+  .maincategories {
+    width: 20%;
+    overflow-y: hidden; /* Prevent scrolling */
+  }

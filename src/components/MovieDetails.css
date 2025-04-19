@@ -1,0 +1,115 @@
+/* MovieDetails.css */
+body {
+    background-color: #121212; /* Dark background for the theme */
+    color: #ffffff; /* White text for readability */
+    font-family: 'Roboto', sans-serif; /* Sleek font */
+    margin: 0;
+    padding: 0;
+  }
+  
+  .moviedetails-container {
+    display: flex;
+    justify-content: center;
+    align-items: flex-start;
+    gap: 30px;
+    padding: 40px;
+    max-width: 1200px;
+    margin-left: 18px;
+    background-color: #1e1e1e; /* Slightly lighter dark for content area */
+    border-radius: 8px;
+    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.8); /* Subtle shadow for depth */
+  }
+  
+  .poster img {
+    width: auto;
+    height: 400px;
+    object-fit: cover;
+    border-radius: 8px;
+    border-bottom: 3px solid #e50914; /* Highlight color */
+    box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.7); /* Depth for the image */
+    transition: transform 0.3s ease, box-shadow 0.3s ease; /* Smooth hover effect */
+  }
+  
+  .poster img:hover {
+    transform: scale(1.05); /* Slight zoom on hover */
+    box-shadow: 0px 6px 12px rgba(0, 0, 0, 0.9); /* Enhanced shadow on hover */
+  }
+  
+  .details {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    max-width: 600px;
+  }
+  
+  h1 {
+    font-size: 2.5rem;
+    margin: 0;
+    color: #e50914; /* Netflix-inspired highlight for title */
+    text-align: left;
+  }
+  
+  p {
+    font-size: 1.2rem;
+    line-height: 1.6;
+    margin: 0;
+    color: #b0b0b0; /* Grey for secondary text */
+  }
+  
+  .details p span {
+    color: #ffffff; /* White highlight for key details */
+  }
+  
+  .details p.release-date::before {
+    content: '📅 '; /* Decorative icon */
+  }
+  
+  .details p.rating::before {
+    content: '⭐ '; /* Decorative icon */
+  }
+  
+  .genres {
+    font-size: 1.2rem;
+    color: #ffffff;
+  }
+  
+  .loading-container {
+    text-align: center;
+    color: #e50914; /* Highlight color for loading state */
+    font-size: 1.5rem;
+    margin-top: 50px;
+  }
+  
+  /* Add smooth transitions */
+  .moviedetails-container, img, h1, p, .genres {
+    transition: all 0.3s ease;
+  }
+
+  .headingline{
+    display: flex;
+    justify-content: space-between;
+  }
+
+  button {
+    background-color:#b0b0b0; /* Green background */
+    color: white; /* White text */
+    border: none; /* Remove border */
+    border-radius: 5px; /* Rounded corners */
+    padding: 10px 15px; /* Padding for size */
+    font-size: 16px; /* Font size */
+    cursor: pointer; /* Pointer cursor on hover */
+    transition: all 0.3s ease; /* Smooth transition */
+    display: flex; /* Flex for alignment */
+    align-items: center; /* Center icon and text */
+    gap: 5px; /* Space between icon and text */
+  }
+  
+  button:hover {
+    background-color: #45a049; /* Darker green on hover */
+    transform: scale(1.05); /* Slight zoom effect */
+  }
+  
+  button:active {
+    background-color: #3e8e41; /* Even darker green on click */
+    transform: scale(0.95); /* Slight shrink effect */
+  }

@@ -1,0 +1,128 @@
+.upper{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 15px;
+    position: relative;
+}
+
+#clear{
+    cursor: pointer;
+    position: absolute;
+    right: 10px;
+    top: 50%;
+    transform: translateY(-50%);
+    background-color: transparent;
+    border: none;
+    color: #888;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 30px;
+    height: 30px;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    z-index: 5; /* Ensure it's above the input */
+    padding: 0;
+}
+
+#clear:hover {
+    background-color: rgba(255, 85, 85, 0.2);
+    color: #ff5555;
+}
+
+#searchbar{
+    width: 100%;
+    height: auto;
+    border-radius: 8px;
+    border: 1px solid #444;
+    background-color: #222;
+    color: #eee;
+    padding: 10px 15px;
+    padding-right: 40px; /* Make room for the clear button */
+    font-size: 16px;
+    transition: all 0.3s ease;
+}
+
+#searchbar:focus {
+    outline: none;
+    border-color: #666;
+    box-shadow: 0 0 0 2px rgba(100, 100, 255, 0.3);
+}
+
+#searchbar::placeholder {
+    color: #777;
+}
+
+.searchresults{
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60%;
+    max-width: 500px;
+    background-color: #1e1e1e;
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3);
+    z-index: 100;
+    max-height: 70vh;
+    overflow-y: auto;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    border-radius: 8px;
+    border: 1px solid #333;
+}
+
+.searchcard{
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    padding: 10px;
+    color: #ddd;
+    border-bottom: 1px solid #333;
+    cursor: pointer;
+    width: 100%;
+    height: 80px;
+    transition: background-color 0.2s ease;
+}
+
+.searchcard:hover {
+    background-color: #2a2a2a;
+}
+
+.searchcard:last-child {
+    border-bottom: none;
+}
+
+.searchcard img{
+    width: 60px;
+    height: 60px;
+    border-radius: 6px;
+    margin-right: 15px;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
+/* Add this to make the search container position relative */
+.search-container {
+    position: relative;
+    width: 100%;
+}
+
+/* Custom scrollbar for the search results */
+.searchresults::-webkit-scrollbar {
+    width: 8px;
+}
+
+.searchresults::-webkit-scrollbar-track {
+    background: #333;
+    border-radius: 4px;
+}
+
+.searchresults::-webkit-scrollbar-thumb {
+    background: #555;
+    border-radius: 4px;
+}
+
+.searchresults::-webkit-scrollbar-thumb:hover {
+    background: #666;
+}

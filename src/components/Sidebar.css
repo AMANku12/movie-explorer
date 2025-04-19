@@ -1,0 +1,85 @@
+/* Sidebar.css */
+.categories {
+  background: #1a1a1a;
+  height: 100%;
+  padding: 1.5rem 1rem;
+  border-right: 1px solid #333;
+  box-shadow: 4px 0 15px rgba(0, 0, 0, 0.2);
+}
+
+.categories ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.categories li {
+  margin: 1.25rem 0;
+  position: relative;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.categories li:hover {
+  transform: translateX(8px);
+}
+
+.linktag {
+  color: #e0e0e0;
+  text-decoration: none;
+  padding: 0.75rem 1.5rem;
+  border-radius: 8px;
+  display: block;
+  font-size: 1rem;
+  transition: all 0.3s ease;
+  background: transparent;
+  position: relative;
+  overflow: hidden;
+}
+
+.linktag::before {
+  content: '';
+  position: absolute;
+  left: 0;
+  top: 0;
+  height: 100%;
+  width: 3px;
+  background: #6366f1;
+  transform: scaleY(0);
+  transition: transform 0.3s ease;
+}
+
+.linktag:hover {
+  background: #2d2d2d;
+  color: #ffffff;
+}
+
+.linktag:hover::before {
+  transform: scaleY(1);
+}
+
+.linktag.active {
+  background: #2d2d2d;
+  color: #6366f1;
+  font-weight: 500;
+}
+
+.linktag.active::before {
+  transform: scaleY(1);
+}
+
+/* Remove the <br/> spacing and handle with CSS */
+.categories br {
+  display: none;
+}
+
+/* Responsive Design */
+@media (max-width: 768px) {
+  .categories {
+    padding: 1rem 0.5rem;
+  }
+  
+  .linktag {
+    padding: 0.5rem 1rem;
+    font-size: 0.9rem;
+  }
+}

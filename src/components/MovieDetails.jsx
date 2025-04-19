@@ -45,7 +45,7 @@ const MovieDetails = () => {
 
     const fetchDetails = async () => {
         try {
-            const response = await axios.post("http://localhost:3000/api/detail/moviedetails", { url: url });
+            const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/detail/moviedetails`, { url: url });
             console.log("moviedetails response", response.data);
             setMovieDetails(response.data);
             setLoading(false);

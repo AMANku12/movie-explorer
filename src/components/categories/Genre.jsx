@@ -28,7 +28,7 @@
 
       const fetchActionMovies = async()=>{
           try {
-              const response = await axios.post("http://localhost:3000/api/category/genre", {url: url});
+              const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/category/genre`, {url: url});
               console.log("actionmovies response",response.data);
               if (!response.data || response.data.length === 0) {
                   console.log("No movies received from the backend");

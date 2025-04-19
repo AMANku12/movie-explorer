@@ -23,7 +23,7 @@ const Login = () => {
     e.preventDefault();         // Prevent default form submission behavior -> whuch would refresh the page
 
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/login", loginData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/login`, loginData);
       console.log("register response: ", response.data);
       if(response.data.message==="Success"){
         localStorage.setItem("token", response.data.token); // store token in local storage
@@ -46,7 +46,7 @@ const Login = () => {
     console.log("register data submitted:", registerData);
 
     try {
-      const response = await axios.post("http://localhost:3000/api/auth/register", registerData);
+      const response = await axios.post(`${import.meta.env.VITE_BACKEND_URL}/api/auth/register`, registerData);
       if(response.data.message==="Success"){
         localStorage.setItem("token", response.data.token); // store token in local storage
         localStorage.setItem("user", JSON.stringify(response.data.user)); // store user in local storage

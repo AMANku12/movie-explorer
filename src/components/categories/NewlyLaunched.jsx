@@ -12,7 +12,7 @@ const NewlyLaunched = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/homepage/newmovies`);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/homepage/newmovies`);
         console.log("newmovies response", response.data);
         setMovies(response.data);
       } catch (error) {

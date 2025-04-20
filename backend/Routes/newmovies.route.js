@@ -14,20 +14,14 @@ const options = {
     },
 };
 
-router.get("/newmovies", async(req,res)=>{
+router.get("/newmovies/:pageno", async(req,res)=>{
     try {
-        const urls = [
-            `${newmoviesurl}&page=1`,
-            `${newmoviesurl}&page=2`,
-            `${newmoviesurl}&page=3`,
-            `${newmoviesurl}&page=4`,
-        ];
+        const pageno = req.params.pageno;
 
-        const responses = await Promise.all(urls.map(url => fetch(url, options))); 
-        
-        const data = await Promise.all(responses.map(response => response.json())); 
-        const newmovies  = data.flatMap(page => page.results); 
-        res.json(newmovies);
+        const response = await fetch(`${newmoviesurl}&page=${pageno}`,options);
+        const newmovies = await response.json();
+        console.log(newmovies);
+        res.json(newmovies.results);
 
     } catch (error) {
         console.log("newmovies error: ", error);

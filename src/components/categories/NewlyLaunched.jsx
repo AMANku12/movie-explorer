@@ -6,15 +6,18 @@ const NewlyLaunched = () => {
   const [movies, setMovies] = useState([]);
   const [loading, setLoading] = useState(true); 
   const [error, setError] = useState(null);    
+  const [pageno, setpageno] = useState(1);
 
   const navigate = useNavigate();
 
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/homepage/newmovies`);
-        console.log("newmovies response", response.data);
-        setMovies(response.data);
+        console.log(pageno);
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/homepage/newmovies/${pageno}`);
+        console.log("newmovies response", response);
+        setMovies(prevMovies => [...prevMovies ,...response.data]);
+
       } catch (error) {
         console.error("newmovies error", error);
         setError("Failed to fetch movies.");
@@ -24,13 +27,13 @@ const NewlyLaunched = () => {
     };
 
     fetchMovies();
-  }, []);
+  }, [pageno]);
+
 
   function toMovieDetails(id) {
     navigate("/moviedetails", { state: id });
   }
 
-  console.log("newly launched movies: ", movies);
 
   return (
     <div className="action-movies-container">
@@ -45,8 +48,9 @@ const NewlyLaunched = () => {
           <h2>{error}</h2>
         </div>
       ) : (
+        <div className="moviescontainer">
         <ul>
-          {movies.map((movie) => (
+          {movies.map((movie) => ( movie.release_date.slice(0,4)==="2025" &&
             <li key={movie.id} onClick={() => toMovieDetails(movie.id)}>
               <div className="moviecard">
                 <div className="imgandname">
@@ -61,7 +65,12 @@ const NewlyLaunched = () => {
             </li>
           ))}
         </ul>
+        <div className="loadmore">
+        <button id="loadmorebtn" onClick={()=> {setpageno(prevpageno => prevpageno+1)}}>Load More</button>
+      </div>
+        </div>
       )}
+      
     </div>
   );
 };

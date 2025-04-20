@@ -13,7 +13,7 @@
 <p>1. Clone the Repository bash Copy Edit</p>
 
 ```
-https://github.com/AMANku12/movie-explorer.git
+git clone https://github.com/AMANku12/movie-explorer.git
 ```
 
 ```

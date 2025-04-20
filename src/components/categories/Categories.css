@@ -65,6 +65,36 @@
     padding-bottom: 2rem;
 }
 
+.loadmore {
+    display: flex;
+    justify-content: center;
+    margin: 2rem 0;
+  }
+  
+  #loadmorebtn {
+    padding: 12px 24px;
+    background-color: #ff4c68;
+    color: white;
+    border: none;
+    border-radius: 9999px; /* pill-shaped */
+    font-size: 1.1rem;
+    font-weight: 600;
+    cursor: pointer;
+    transition: all 0.3s ease;
+    box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  }
+  
+  #loadmorebtn:hover {
+    background-color: #ff6b81;
+    transform: translateY(-2px);
+    box-shadow: 0 6px 16px rgba(0, 0, 0, 0.2);
+  }
+  
+  #loadmorebtn:active {
+    transform: scale(0.98);
+    background-color: #e8435c;
+  }
+  
 
 .moviecard {
     background: #252525;

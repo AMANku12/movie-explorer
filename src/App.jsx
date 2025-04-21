@@ -6,7 +6,7 @@ import SearchBar from './components/SearchBar';
 import CenterContent from './components/CenterContent'; 
 import Auth from './components/Auth';
 import './App.css';
-
+import { Analytics } from "@vercel/analytics/react"
 
 const Mainlayout = ()=>{
   return (

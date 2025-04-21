@@ -7,6 +7,7 @@ import CenterContent from './components/CenterContent';
 import Auth from './components/Auth';
 import './App.css';
 import { Analytics } from "@vercel/analytics/react"
+import { SpeedInsights } from '@vercel/speed-insights/react';
 
 const Mainlayout = ()=>{
   return (
@@ -45,6 +46,8 @@ function App() {
         </Routes>
         {/* 👇 Analytics component should be inside Router but outside Routes */}
       <Analytics />
+      <SpeedInsights />
+      
     </Router>
   );
 }

@@ -13,11 +13,9 @@ const NewlyLaunched = () => {
   useEffect(() => {
     const fetchMovies = async () => {
       try {
-        console.log(pageno);
-        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/api/homepage/newmovies/${pageno}`);
-        console.log("newmovies response", response);
-        setMovies(prevMovies => [...prevMovies ,...response.data]);
-
+        const response = await axios.get(`${import.meta.env.VITE_BACKEND_URL}/homepage/newmovies`);
+        console.log("newmovies response", response.data);
+        setMovies(response.data);
       } catch (error) {
         console.error("newmovies error", error);
         setError("Failed to fetch movies.");

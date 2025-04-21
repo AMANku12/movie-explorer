@@ -43,7 +43,8 @@ function App() {
 
           <Route path='/*' element={<Mainlayout/>}/>
         </Routes>
-      
+        {/* 👇 Analytics component should be inside Router but outside Routes */}
+      <Analytics />
     </Router>
   );
 }

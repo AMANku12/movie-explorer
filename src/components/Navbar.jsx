@@ -31,7 +31,7 @@ const Navbar = () => {
   return (
     <div className="navbar">
       <h1 className="navbar-logo" onClick={()=> {navigate("/")}}>I LOVE MOVIES</h1>
-      <span>&nbsp<The website may work slow because the backend is deployed on Render free version></span>
+      <span>&nbsp {The website may work slow because the backend is deployed on Render free version}</span>
       
       <div className="navbar-auth">
         {user ? (
